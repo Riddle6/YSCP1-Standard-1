@@ -16,13 +16,14 @@ def display_menu():
 
 # Calculate change
 def calculate_change(payment, cost):
-    return payment - cost - 0.10
+    return payment - cost # Logic Error Handled. You should not subtract 0.10 from payment - cost. 
+                          # Otherwise you can get negative change if the input is 9 cents above the cost of the item.
 
 # Operate Vending Machine
 def vending_machine():
-    items = {"1": 1.25, "2": 1.00} 
+    items = {"1": 1.25, "2": 1.00, "3": 0.75} # Runtime Error Handled. There was no number 3 to select.
     while True:
-        display_menu
+        display_menu() # Syntax Error Handled. There was no parantheses.
         choice = input("\nSelect an item (1-3) or 'q' to quit: ")
 
         if choice == 'q':
